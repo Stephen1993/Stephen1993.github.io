@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <link rel="dns-prefetch" href="http://chenyangblog.com">
+  <title>产品分析之社交产品 | Stephen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="看-》想-》写，这是一个重要的过程，以前只看过产品分析，也有想过产品分析，这是第一次写产品分析，分析的内容和方法肯定是有待提高的，希望自己能坚持产品分析并完善吧。最爱社交产品，所以这次拿几个社交产品开始我的第一次产品分析:
+
+微信–熟人社交陌陌–基于LBS的陌生人社交比邻–电话社交探探–有限制的陌生人社交">
+<meta property="og:type" content="article">
+<meta property="og:title" content="产品分析之社交产品">
+<meta property="og:url" content="http://chenyangblog.com/2016/06/09/产品分析之社交产品.html">
+<meta property="og:site_name" content="Stephen">
+<meta property="og:description" content="看-》想-》写，这是一个重要的过程，以前只看过产品分析，也有想过产品分析，这是第一次写产品分析，分析的内容和方法肯定是有待提高的，希望自己能坚持产品分析并完善吧。最爱社交产品，所以这次拿几个社交产品开始我的第一次产品分析:
+
+微信–熟人社交陌陌–基于LBS的陌生人社交比邻–电话社交探探–有限制的陌生人社交">
+<meta property="og:image" content="http://blog-images01.oss-cn-hangzhou.aliyuncs.com/QQ20160607-0.png">
+<meta property="og:image" content="http://blog-images01.oss-cn-hangzhou.aliyuncs.com/QQ20160607-1.png">
+<meta property="og:image" content="http://blog-images01.oss-cn-hangzhou.aliyuncs.com/QQ20160607-2.png">
+<meta property="og:updated_time" content="2016-06-12T10:32:55.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="产品分析之社交产品">
+<meta name="twitter:description" content="看-》想-》写，这是一个重要的过程，以前只看过产品分析，也有想过产品分析，这是第一次写产品分析，分析的内容和方法肯定是有待提高的，希望自己能坚持产品分析并完善吧。最爱社交产品，所以这次拿几个社交产品开始我的第一次产品分析:
+
+微信–熟人社交陌陌–基于LBS的陌生人社交比邻–电话社交探探–有限制的陌生人社交">
+<meta name="twitter:image" content="http://blog-images01.oss-cn-hangzhou.aliyuncs.com/QQ20160607-0.png">
+  
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  <link rel="stylesheet" type="text/css" href="/./main.2d7529.css">
+  <style type="text/css">
+  
+    #container.show {
+      background: linear-gradient(200deg,#a0cfe4,#e8c37e);
+    }
+  </style>
+  
+
+  
+
+</head>
+
+<body>
+  <div id="container" q-class="show:isCtnShow">
+    <canvas id="anm-canvas" class="anm-canvas"></canvas>
+    <div class="left-col" q-class="show:isShow">
+      
+<div class="overlay" style="background: #4d4d4d"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img src="/img/xyyh_head.png" class="js-avatar">
+		</a>
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Stephen</a></h1>
+		</hgroup>
+		
+		<p class="header-subtitle">做一些有趣的事, 做一个有趣的人。</p>
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/photos/">相册</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+    		
+    			
+    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
+    			
+            
+    			
+    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
+    			
+            
+    			
+    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+					<a class="github" target="_blank" href="https://github.com/Stephen1993" title="github"><i class="icon-github"></i></a>
+		        
+					<a class="rss" target="_blank" href="/atom.xml" title="rss"><i class="icon-rss"></i></a>
+		        
+					<a class="blog" target="_blank" href="http://blog.csdn.net/xingyeyongheng?viewmode=list" title="blog"><i class="icon-blog"></i></a>
+		        
+			</div>
+		</nav>
+	</header>		
+</div>
+
+    </div>
+    <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
+      
+<nav id="mobile-nav">
+  	<div class="overlay js-overlay" style="background: #4d4d4d"></div>
+	<div class="btnctn js-mobile-btnctn">
+  		<div class="slider-trigger list" q-on="click: openSlider(e)"><i class="icon icon-sort"></i></div>
+	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="/img/xyyh_head.png" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author js-header-author">Stephen</h1>
+			</hgroup>
+			
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>做一些有趣的事, 做一个有趣的人。<i class="icon icon-quo-right"></i></p>
+			
+			
+			
+				
+			
+				
+			
+			
+			
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/Stephen1993" title="github"><i class="icon-github"></i></a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss"><i class="icon-rss"></i></a>
+			        
+						<a class="blog" target="_blank" href="http://blog.csdn.net/xingyeyongheng?viewmode=list" title="blog"><i class="icon-blog"></i></a>
+			        
+				</div>
+			</nav>
+
+			<nav class="header-menu js-header-menu">
+				<ul style="width: 50%">
+				
+				
+					<li style="width: 50%"><a href="/">主页</a></li>
+		        
+					<li style="width: 50%"><a href="/photos/">相册</a></li>
+		        
+				</ul>
+			</nav>
+		</header>				
+	</div>
+	<div class="mobile-mask" style="display:none" q-show="isShow"></div>
+</nav>
+
+      <div id="wrapper" class="body-wrap">
+        <div class="menu-l">
+          <div class="canvas-wrap">
+            <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
+          </div>
+          <div id="js-content" class="content-ll">
+            <article id="post-产品分析之社交产品" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      产品分析之社交产品
+    </h1>
+  
+
+        
+        <a href="/2016/06/09/产品分析之社交产品.html" class="archive-article-date">
+  	<time datetime="2016-06-08T17:50:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><hr><br>看-》想-》写，这是一个重要的过程，以前只看过产品分析，也有想过产品分析，这是第一次写产品分析，分析的内容和方法肯定是有待提高的，希望自己能坚持产品分析并完善吧。<br>最爱社交产品，所以这次拿几个社交产品开始我的第一次产品分析:</p>
+<blockquote>
+<p>微信–熟人社交<br>陌陌–基于LBS的陌生人社交<br>比邻–电话社交<br>探探–有限制的陌生人社交</p>
+</blockquote>
+<a id="more"></a>
+<h4 id="微信"><a href="#微信" class="headerlink" title="微信"></a>微信</h4><p><hr><br><strong>1.微信的来源</strong></p>
+<blockquote>
+<p>微信是腾讯公司于2011年1月21日推出的一个为智能终端提供即时通讯服务的免费应用程序，微信支持跨通信运营商、跨操作系统平台通过网络快速发送免费（需消耗少量网络流量）语音短信、视频、图片和文字，同时，也可以使用通过共享流媒体内容的资料和基于位置的社交插件“摇一摇”、“漂流瓶”、“朋友圈”、”公众平台“、”语音记事本“等服务插件。</p>
+</blockquote>
+<p><strong>2.微信的定位</strong></p>
+<blockquote>
+<p>微信目前主要用于智能移动平台，定位于通信，熟人社交，目前添加好友的方式有：<br><code>1.通过qq号添加</code><br><code>2.通过手机联系人添加</code><br><code>3.通过雷达添加身边朋友</code><br><code>4.扫一扫二维码添加</code><br><code>5.通过微信号添加</code><br>这几种方式都属于熟人之间的社交，只有认识或者在身边然后通过主动添加的方式才可以成为好友</p>
+<p>后来添加了几种陌生人社交的方式，但是并不允许直接添加为好友，而是需要先打招呼，聊天，然后彼此成为相对的“熟人”并且互相同意之后才可以添加为好友:<br><code>1.摇一摇</code><br><code>2.附近的人</code><br><code>3.漂流瓶</code><br>这几种方式属于陌生人社交，用户并不知道对方是谁</p>
+<p>那么分析这几种添加好友的方式，可以得出一下结论：<br><code>1.微信希望联动手机好友，qq好友，身边的好友，足够满足你添加熟人的方式，希望建立一个熟人社交圈</code><br><code>2.微信给了几个陌生人社交的入口，不拒绝用户进行陌生人社交，但是想彼此成为好友则需要互相认同，成为相对的“熟人”</code></p>
+</blockquote>
+<p><strong>3.微信的用户群体</strong></p>
+<blockquote>
+<p>借用几张网上的微信数据图进行分析:<br><img src="http://blog-images01.oss-cn-hangzhou.aliyuncs.com/QQ20160607-0.png" style="width: 49%; float:left;"><br><img src="http://blog-images01.oss-cn-hangzhou.aliyuncs.com/QQ20160607-1.png" style="width: 49%; margin-top: -23px; float:right;"><br><img src="http://blog-images01.oss-cn-hangzhou.aliyuncs.com/QQ20160607-2.png" style="width: 49%; margin-top: 17px; margin-left: 30%"><br>从上图数据中分析得出如下结论:<br><code>1.微信的用户群体中性别主要以男生为主，但是女性用户也并不少，男女比例约为1.8 : 1。</code><br><code>2.微信的用户群体非常年轻，近一半用户年龄低于26岁，而有九成的用户年龄低于36岁，所以18-35岁的中青年为微信的主要用户群体，他们的比例高达86.2%。</code><br><code>3.微信的用户群体中企业职员居多，达到四成，而这部分用户的收入相对稳定，消费能力较好，所以微信可以挖掘这部分用户的消费潜力。</code></p>
+</blockquote>
+<p><strong>4.微信的功能</strong></p>
+<blockquote>
+<p>1.可进行语音，文字，表情，图片，视频等聊天消息的发送，满足用户对多种多样消息发送方式的需求。<br>2.可在聊天中发送红包，这是一种新奇的社交方式，将传统红包搬移到互联网中，而且令红包的发送是那么的轻松方便。<br>3.朋友圈，将自己的生活以及自己喜欢的东西分享给朋友们，增加朋友之间的了解和友情。<br>4.摇一摇、查看附近的人、漂流瓶，带给用户的几种新颖又有趣的陌生人社交方式。<br>5.扫一扫，支持普通的二维码/条码扫描，支持封面，街景以及单词翻译的扫描。<br>6.钱包，管理用户的零钱以及涵盖各种生活服务。<br>7.卡券，含有用户的各种优惠券以及会员卡。<br>8.游戏，含有腾讯推荐的游戏。<br>9.表情，可以在这里下载各种有趣好玩的表情。</p>
+</blockquote>
+<p><strong>5.微信的使用场景</strong></p>
+<blockquote>
+<p>1.工作中，微信在工作中使用已经很常见了，特别是一些工作群。<br>2.无聊想聊天的时候，微信是熟人社交，想找朋友聊天的时候微信是一个很好的平台，微信又有摇一摇，附近的人等陌生人社交。<br>3.需要阅读查看时，微信中的订阅号和公众号已经很多，大家都会关注一下自己喜欢的，当有新文章时即可查看。<br>4.支付，微信支付已经很成熟了，不管是发红包还是转账，以及线下支付等都可以用微信支付。<br>5.电商，在微信中开店做生意或者成为微商。</p>
+</blockquote>
+<p><strong>6.微信的体验</strong></p>
+<blockquote>
+<p>1.聊天体验，微信支持语音，视频，文字，表情以及群聊等，聊天方式丰富，聊天界面流畅简洁，表情图丰富有趣还可以添加和收藏，微信将聊天列表放在第一屏，主打聊天，体验很好，消息的收发速度很快。<br>2.交易支付，微信的支付结合了社交，不仅仅有普通的转账交易和线下支付交易，还可以在聊天过程中发送红包，把传统法的红包互联网和娱乐化了，将红包的发放更加简单有趣。<br>3.附近的人，摇一摇，漂流瓶，附近的人基于lbs的社交，即时是陌生人，但也知道就在周围，带给陌生人社交更好的体验和动力，摇一摇通过两个同时摇动手机的人进行匹配，带给用户一种新颖有趣的社交方式，漂流瓶让用户捡别人扔出的瓶子或者自己扔出瓶子进行社交，更加方便的社交方式。<br>4.朋友圈，类似于qq空间，将自己的生活和爱好分享给朋友，但是又不同于qq空间，更加的强调朋友之间的关系和生活分享，朋友圈主推图片式分享，给用户的分享主要入口是需要图片的，而文字的分享则更隐秘些，需要长按，朋友圈更加强调朋友之间的关系，只要互相是朋友时才能看到彼此的评论，而如果互相是朋友也会收到互相评论某某或者点赞某某的消息。</p>
+</blockquote>
+<p><strong>7.微信的商业化</strong></p>
+<blockquote>
+<p>微信的商业化目前来说不是特别的多和明显，主要有以下几种:<br>1.表情商店，通过出售多种多样的表情获取收入。<br>2.转账手续费，用户将微信零钱转账至银行卡时收取的手续费。<br>3.朋友圈，将朋友圈的大流量进行变现，通过大数据对用户进行广告的精准投放从而达到商业化。</p>
+</blockquote>
+<p><strong>8.总结</strong></p>
+<blockquote>
+<p>微信已经渐渐的深入了大家的生活，不仅提供了方便快速的聊天功能，还有线上转账支付以及线下的支付，成为了一个方便大家生活的工具，而微信的数据也表明微信不仅仅是年轻人用，老一辈的也会用，真正降低了沟通的成本，微信的口号是连接一切，非常期待微信做到这一步。</p>
+</blockquote>
+<h4 id="陌陌"><a href="#陌陌" class="headerlink" title="陌陌"></a>陌陌</h4><p><hr><br><strong>1.陌陌的来源</strong></p>
+<blockquote>
+<p>陌陌成立于于2011年3月，是一款基于地理位置的移动社交工具。使用者可以通过陌陌认识附近的人，免费发送文字消息、语音、照片以及精准的地理位置和身边的人更好的交流；可以使用陌陌创建和加入附近的兴趣小组、留言及附近活动和陌陌吧。</p>
+</blockquote>
+<p><strong>2.陌陌的定位</strong></p>
+<blockquote>
+<p>陌陌目前主要用于智能移动平台，定位于陌生人社交，主要添加好友方式有：<br><code>1.可直接添加自己看到的陌生人，比如附近的人</code><br><code>2.通过搜索陌陌号进行添加</code><br><code>3.添加通讯录好友</code><br><code>4.添加qq和微信好友</code><br>以上这几种为陌陌添加好友的方式，其中2，3，4的添加方式属于添加自己的熟人，其中添加qq和微信是通过邀请用户的方式进行添加好友，这几种熟人添加方式并不是陌陌的主要渠道，并且邀请式的添加好友并不及时有效，而陌陌区别于微信的最大之处就是在于陌陌强调陌生人社交，不仅第一界面是附近的陌生人，陌生人动态，陌生群组等，而且附近的陌生人显示的距离精确到米和在线的时间也是实时显示的，用户可直接和陌生人进行聊天，相互关注即可成为好友。</p>
+</blockquote>
+<p><strong>3.陌陌的用户群体</strong></p>
+<blockquote>
+<p>陌陌的用户多以年轻人为主，其中又以白领和学生居多，多数人冲着约炮神器慕名而来，其中男性居多，并且普遍寂寞，对两性交友感兴趣。</p>
+</blockquote>
+<p><strong>4.陌陌的功能</strong></p>
+<blockquote>
+<p>1.查看附近的人，动态，群组，陌陌的主打功能，显示给用户附近的人以及出现的时间，用户可直接进行打招呼聊天，而为了增加陌生人之间的话题，即时是陌生人，也可以互相看到对方的信息，比如有限的动态，签名，个人信息，爱好以及常出没地等，用户也可以直接查看附近的人发送的动态并且直接打招呼聊天，也可以加入附近的群组，和群内成员进行线上聊天和线下活动等。<br>2.筛选附近的人，用户可设置一定的条件，比如性别，活跃时间，年龄，星座等来筛选出现在自己附近的人，从而让用户更方便的寻找到自己想要聊天的陌生人。<br>3.直播，用户可观看正在进行的直播，还能观看自己附近的直播。<br>4.动态，用户可分享自己的动态和观看好友的动态，用户还可观看陌生人的动态。<br>5.圈子，圈子类似社区，聚集有共同特征的人，可进行看帖，发帖和回帖。<br>6.聊天室，以莫一主题建立一个临时群组，可进去聊天和围观别人聊天。<br>7.会员中心，表情商店，用户可购买会员获得更多的体验。</p>
+</blockquote>
+<p><strong>5.陌陌的使用场景</strong></p>
+<blockquote>
+<p>1.作为一款主打陌生人聊天的工具，陌陌可以在你想找人聊天时都可使用。<br>2.陌陌的群组以及群活动也是非常丰富的，在周末无聊的时候可以参加陌陌群组组织的活动。</p>
+</blockquote>
+<p><strong>6.陌陌的体验</strong></p>
+<blockquote>
+<p>1.寻找陌生人体验，陌陌的第一界面就是附近的陌生人，并且可以看到陌生人的头像以及上传的图片，还可以看到用户的动态以及爱好，是否单身，职业和个人信息等众多的信息，对于用户来说是很好的体验，可以快速的找到和陌生人之间的共同话题。<br>2.聊天体验，陌陌生的聊天功能是非常丰富的，支持文字，语音，视频，发送定位，红包，群聊，分享音乐以及阅后即焚等众多的聊天功能，给用户完善的聊天体验，对于陌陌独有的阅后即焚则增加了用户聊天的私密性，另外陌陌的聊天界面还显示用户之间的距离，以及消息是否被送达和阅读，可以实时感觉到对方是否对你有兴趣，是否阅读了你的消息，减少用户等待聊天的时间，减少了陌生人聊天的成本。<br>3.直播体验，用户在陌陌里面选择直播间时不仅可以查看最新的以及通过排行榜进行查看，还可以查看自己的附近的直播，给用户更加真实的感觉，用户在退出直播间之后，直播会以小屏形式显示在用户手机上，用户可以边看直播边进行其他的活动。<br>4.圈子体验，圈子里面可以发帖回帖以及看帖，方便迅速的查看用户感兴趣的东西和发帖寻求自己想要的东西。<br>5.点点体验，点点里面主要是推荐附近的人，用户可选择喜欢还是不喜欢，只有双方互相喜欢之后才可以聊天，减少了用户的被骚扰。</p>
+</blockquote>
+<p><strong>7.陌陌的商业化</strong></p>
+<blockquote>
+<p>1.会员表情增值服务，陌陌有会员服务和表情上店，用户想要获得更好的聊天或者查看用户信息的体验可以通过购买会员和表情。<br>2.游戏联运，陌陌以自己的用户数为基础，和第三方游戏方进行合作获取收益。<br>3.接入第三方api，陌陌通过合作接入第三方api和服务以便商业化。<br>4.广告推广，陌陌接入广告或者商家在附近的人和动态里面进行推广以便商业化。</p>
+</blockquote>
+<p><strong>8.总结</strong></p>
+<blockquote>
+<p>陌陌从上线到上市，发展迅速，作为国内最成功的陌生人社交软件，陌陌以陌生人作为入口和主打功能显然是成功了，但是俗话说成业风云败也风云，陌陌既然在陌生人社交这里成功了，可不能在这里跌倒，而陌陌中现在出现的很多问题就是大多数人以约炮的目的进行社交，带给太多用户骚扰，特别是女性用户，所以陌陌需要做的是如何减少用户的被骚扰以及增强用户的聊天质量，为此陌陌有星级评分，拉名单，以及最新出的点点其实都是减少用户的骚扰，带给用户更好的聊天体验，愿陌陌越来越好。</p>
+</blockquote>
+<h4 id="比邻"><a href="#比邻" class="headerlink" title="比邻"></a>比邻</h4><p><hr><br><strong>1.比邻的来源</strong></p>
+<blockquote>
+<p>比邻于2013年5月上线，主打电话社交，是一个刺激年轻人心跳的社交工具。主要通过即时通话，随时畅聊你感兴趣的话题，并且可以通过精彩的图片和文字分享生活中的美好点滴，也可以欣赏其它用户个性十足的个人资料和生活相册。通过比邻可以以最直接的打电话形式结识来自天涯海角却与你有共同话题的新朋友，还可以免费发送可爱的动态表情短信联络好友，是一款时尚、刺激的社交APP。</p>
+</blockquote>
+<p><strong>2.比邻的定位</strong></p>
+<blockquote>
+<p>比邻定位于陌生人电话社交，可通过比邻号进行好友的查询和添加，也可以通过互相关注而成为好友。</p>
+</blockquote>
+<p><strong>3.比邻的用户群体</strong></p>
+<blockquote>
+<p>比邻的用户群体主要是上班族或者学生，在业余时间的时候进行陌生人聊天。</p>
+</blockquote>
+<p><strong>4.比邻的功能</strong></p>
+<blockquote>
+<p>1.查看同城在线，用户可设置一定的筛选条件进行同城用户筛选。<br>2.随机电话，用户可进入随机电话选择1对1随机单聊或者随机群聊。<br>3.聊天，用户和陌生人可进行文字，图片或者电话聊天。<br>4.直播，可观看直播，直播分为视频直播可语音直播。</p>
+</blockquote>
+<p><strong>5.比邻的使用场景</strong></p>
+<blockquote>
+<p>1.在业余时间下，用户想追求更加刺激的聊天时可使用比邻的电话聊天。<br>2.用户想和同城异性聊天时可使用比邻的同城功能。<br>3.用户想进行午间夜话这种语音聊天或者想看直播时可使用比邻。</p>
+</blockquote>
+<p><strong>6.比邻的体验</strong></p>
+<blockquote>
+<p>1.陌生人打招呼体验，和陌陌相同的是可以和陌生人打招呼，并且主界面显示的就是同城用户，增加了陌生人的真实性和拉近的彼此的距离，同样也可以查看陌生人的个人信息以及动态等，但是不同于陌陌的是打招呼不能过快，快速的打招呼是被禁止的，每次和陌生人打完招呼都需要稍等一会才能和下一个人打招呼，这样其实能更好的减少用户的被骚扰性和降低用户去骚扰别人。<br>2.聊天体验，和陌生人进行聊天时只能文字或者表情图片，不能语音但是可以申请电话聊天，因为比邻主打电话聊天，并且电话聊天更加的刺激和真实，另外如果双方互为陌生人，那么每天的聊天次数是有限制的，这点体验其实很差，比邻在和陌生人聊天次数被限制之前没任何的通知，忽然间就不能回对方信息了，导致双方可能交流的挺愉快的但是突然就没消息了，而且也不能回消息叫对方关注自己，所以这点需要改进。<br>3.随机电话体验，用户可选择进行群聊，进入群聊会有房主，就是话题的发起者，用户可以倾听他人聊天或者自己聊天，既刺激又真实，也可以选择1对1的单聊，体验两人风情，更加刺激的聊天。<br>4.直播体验，直播分为视频直播和语音直播，视频直播其实也是大同小异了，我比较喜欢里面的语音直播，相当于以前的电台之类的，可以听主播聊天以及和主播聊天。</p>
+</blockquote>
+<p><strong>8.总结</strong></p>
+<blockquote>
+<p>微信将短信彻底的变成了验证码，垃圾广告的专属地，而比邻作为电话社交，是否能开辟电话的新的天地呢，比较期待比邻，目前来说比邻的随机电话聊天以及鼓励大家聊天直接使用电话聊天，这些都带给用户一种更加刺激的聊天，希望比邻越来越好。</p>
+</blockquote>
+<h4 id="探探"><a href="#探探" class="headerlink" title="探探"></a>探探</h4><p><hr><br><strong>1.探探的来源</strong></p>
+<blockquote>
+<p>探探是一款基于地理位置的移动社交工具。使用者可以在探探上通过左右滑动认识附近的人，左滑再见，右滑喜欢。探探App交友流程可以简单理解为“彼此喜欢-&gt;享受一刻心动的小惊喜-&gt;开始聊天”模式。探探可以免费发送文字消息、语音、照片，和身边的TA更好的交流。</p>
+</blockquote>
+<p><strong>2.探探的用户群体</strong></p>
+<blockquote>
+<p>专注于80，90后移动社交，主要添加好友方式是相互喜欢，然后匹配成功互为好友。</p>
+</blockquote>
+<p><strong>4.探探的功能</strong></p>
+<blockquote>
+<p>1.查看用户头像图片，探探进入的主界面就是根据定位附近的异性用户并且以大头图片展示。<br>2.查看用户详细信息，点击相应的用户可查看他的信息，标签，兴趣等，还能看到双方的共同点。<br>3.匹配，用户可左滑选择再见，油滑选择喜欢，如果双方互为喜欢则匹配成功。<br>4.聊天，匹配成功的陌生人互为好友，可进行聊天。<br>5.朋友圈，可查看匹配的好友的朋友圈。<br>6.匿名暗恋表白，可选择自己通讯录里的好友进行匿名表白，被表白的用户将会收到一条表白的短信。</p>
+</blockquote>
+<p><strong>5.探探的体验</strong></p>
+<blockquote>
+<p>1.匹配体验，用户不能直接和其他用户聊天，必须先互相喜欢，匹配成功才可以进行聊天，而喜欢的过程只需要右滑即可，体验上很好，滑动特别的流畅，并且每一个用户都显示了大头像，让用户一眼就知道是不是自己喜欢的，减少了用户甄别的成本，同时也减少了用户被骚扰以及去骚扰别人的次数，而进行匹配之后用户如果不喜欢对方也可以解除匹配，则对方不会再出现在自己的好友里，自己也会消失在对方的好友里。<br>2.聊天体验，可进行文字，图片，语音聊天等，聊天界面简洁流畅，特别是发送图片以及查看图片都非常的流畅，而在传统的聊天方式上还加入了真心话聊天，可向对方申请真心话聊天，增加了聊天的趣味性和刺激性，而在用户界面还可以看到对方绑定的微信等社交账号，可以更方便的添加该用户的其他社交账号，更好的把双方联系在一起。<br>3.匿名表白体验，简单方便，只需要选择自己的联系人然后确认即可，表白短信就会被发送出去，不需要用户进行其他的操作。</p>
+</blockquote>
+<p><strong>6.总结</strong></p>
+<blockquote>
+<p>市面上各种各样的社交软件层出不穷，然而陌生人社交的方式却是大同小异，陌生人社交最大的被骚扰问题也是一直存在，而探探改变陌生人社交的方式，从眼缘，看脸开始，只有互相喜欢才可以聊天，减少用户的别骚扰，同时一旦互相匹配成功从一定程度上可认作双方互相喜欢，互相成为好友，可以看到双方的社交账号以及更详细的个人信息和朋友圈动态，给用户更真实更安全的体验，比较喜欢探探的社交方式，愿探探越来越好。</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">产品分析</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/产品之道/" class="article-tag-list-link color5">产品之道</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://chenyangblog.com/2016/06/09/产品分析之社交产品.html" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2016/06/20/idea职场社交.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          idea职场社交
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/06/06/idea-20160606.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">idea之慢聊</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="产品分析之社交产品" data-title="产品分析之社交产品" data-url="http://chenyangblog.com/2016/06/09/产品分析之社交产品.html"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"xyyh2016"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+  
+
+
+
+
+          </div>
+        </div>
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 Stephen
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script>
+	var yiliaConfig = {
+		mathjax: false,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false,
+		root: "/",
+		innerArchive: true,
+		showTags: true
+	}
+</script>
+
+<script>!function(t){function n(r){if(e[r])return e[r].exports;var o=e[r]={exports:{},id:r,loaded:!1};return t[r].call(o.exports,o,o.exports,n),o.loaded=!0,o.exports}var e={};return n.m=t,n.c=e,n.p="./",n(0)}([function(t,n,e){"use strict";function r(t){return t&&t.__esModule?t:{default:t}}function o(t,n){var e=/\/|index.html/g;return t.replace(e,"")===n.replace(e,"")}function i(){for(var t=document.querySelectorAll(".js-header-menu li a"),n=window.location.pathname,e=0,r=t.length;e<r;e++){var i=t[e];o(n,i.getAttribute("href"))&&(0,d.default)(i,"active")}}function u(t){for(var n=t.offsetLeft,e=t.offsetParent;null!==e;)n+=e.offsetLeft,e=e.offsetParent;return n}function f(t){for(var n=t.offsetTop,e=t.offsetParent;null!==e;)n+=e.offsetTop,e=e.offsetParent;return n}function c(t,n,e,r,o){var i=u(t),c=f(t)-n;if(c-e<=o){var a=t.$newDom;a||(a=t.cloneNode(!0),(0,h.default)(t,a),t.$newDom=a,a.style.position="fixed",a.style.top=(e||c)+"px",a.style.left=i+"px",a.style.zIndex=r||2,a.style.width="100%",a.style.color="#fff"),a.style.visibility="visible",t.style.visibility="hidden"}else{t.style.visibility="visible";var s=t.$newDom;s&&(s.style.visibility="hidden")}}function a(){var t=document.querySelector(".js-overlay"),n=document.querySelector(".js-header-menu");c(t,document.body.scrollTop,-63,2,0),c(n,document.body.scrollTop,1,3,0)}function s(){document.querySelector("#container").addEventListener("scroll",function(t){a()}),window.addEventListener("scroll",function(t){a()}),a()}function l(){x.default.versions.mobile&&window.screen.width<800&&(i(),s())}var p=e(71),d=r(p),v=e(72),y=(r(v),e(84)),h=r(y),b=e(69),x=r(b),m=e(75),g=r(m),w=e(70);l(),(0,w.addLoadEvent)(function(){g.default.init()}),t.exports={}},function(t,n){var e=t.exports="undefined"!=typeof window&&window.Math==Math?window:"undefined"!=typeof self&&self.Math==Math?self:Function("return this")();"number"==typeof __g&&(__g=e)},function(t,n){var e={}.hasOwnProperty;t.exports=function(t,n){return e.call(t,n)}},function(t,n,e){var r=e(49),o=e(15);t.exports=function(t){return r(o(t))}},function(t,n,e){t.exports=!e(8)(function(){return 7!=Object.defineProperty({},"a",{get:function(){return 7}}).a})},function(t,n,e){var r=e(6),o=e(12);t.exports=e(4)?function(t,n,e){return r.f(t,n,o(1,e))}:function(t,n,e){return t[n]=e,t}},function(t,n,e){var r=e(10),o=e(30),i=e(24),u=Object.defineProperty;n.f=e(4)?Object.defineProperty:function(t,n,e){if(r(t),n=i(n,!0),r(e),o)try{return u(t,n,e)}catch(t){}if("get"in e||"set"in e)throw TypeError("Accessors not supported!");return"value"in e&&(t[n]=e.value),t}},function(t,n,e){var r=e(22)("wks"),o=e(13),i=e(1).Symbol,u="function"==typeof i,f=t.exports=function(t){return r[t]||(r[t]=u&&i[t]||(u?i:o)("Symbol."+t))};f.store=r},function(t,n){t.exports=function(t){try{return!!t()}catch(t){return!0}}},function(t,n,e){var r=e(35),o=e(16);t.exports=Object.keys||function(t){return r(t,o)}},function(t,n,e){var r=e(11);t.exports=function(t){if(!r(t))throw TypeError(t+" is not an object!");return t}},function(t,n){t.exports=function(t){return"object"==typeof t?null!==t:"function"==typeof t}},function(t,n){t.exports=function(t,n){return{enumerable:!(1&t),configurable:!(2&t),writable:!(4&t),value:n}}},function(t,n){var e=0,r=Math.random();t.exports=function(t){return"Symbol(".concat(void 0===t?"":t,")_",(++e+r).toString(36))}},function(t,n){var e=t.exports={version:"2.4.0"};"number"==typeof __e&&(__e=e)},function(t,n){t.exports=function(t){if(void 0==t)throw TypeError("Can't call method on  "+t);return t}},function(t,n){t.exports="constructor,hasOwnProperty,isPrototypeOf,propertyIsEnumerable,toLocaleString,toString,valueOf".split(",")},function(t,n){t.exports={}},function(t,n){t.exports=!0},function(t,n){n.f={}.propertyIsEnumerable},function(t,n,e){var r=e(6).f,o=e(2),i=e(7)("toStringTag");t.exports=function(t,n,e){t&&!o(t=e?t:t.prototype,i)&&r(t,i,{configurable:!0,value:n})}},function(t,n,e){var r=e(22)("keys"),o=e(13);t.exports=function(t){return r[t]||(r[t]=o(t))}},function(t,n,e){var r=e(1),o="__core-js_shared__",i=r[o]||(r[o]={});t.exports=function(t){return i[t]||(i[t]={})}},function(t,n){var e=Math.ceil,r=Math.floor;t.exports=function(t){return isNaN(t=+t)?0:(t>0?r:e)(t)}},function(t,n,e){var r=e(11);t.exports=function(t,n){if(!r(t))return t;var e,o;if(n&&"function"==typeof(e=t.toString)&&!r(o=e.call(t)))return o;if("function"==typeof(e=t.valueOf)&&!r(o=e.call(t)))return o;if(!n&&"function"==typeof(e=t.toString)&&!r(o=e.call(t)))return o;throw TypeError("Can't convert object to primitive value")}},function(t,n,e){var r=e(1),o=e(14),i=e(18),u=e(26),f=e(6).f;t.exports=function(t){var n=o.Symbol||(o.Symbol=i?{}:r.Symbol||{});"_"==t.charAt(0)||t in n||f(n,t,{value:u.f(t)})}},function(t,n,e){n.f=e(7)},function(t,n,e){var r=e(1),o=e(14),i=e(46),u=e(5),f="prototype",c=function(t,n,e){var a,s,l,p=t&c.F,d=t&c.G,v=t&c.S,y=t&c.P,h=t&c.B,b=t&c.W,x=d?o:o[n]||(o[n]={}),m=x[f],g=d?r:v?r[n]:(r[n]||{})[f];d&&(e=n);for(a in e)s=!p&&g&&void 0!==g[a],s&&a in x||(l=s?g[a]:e[a],x[a]=d&&"function"!=typeof g[a]?e[a]:h&&s?i(l,r):b&&g[a]==l?function(t){var n=function(n,e,r){if(this instanceof t){switch(arguments.length){case 0:return new t;case 1:return new t(n);case 2:return new t(n,e)}return new t(n,e,r)}return t.apply(this,arguments)};return n[f]=t[f],n}(l):y&&"function"==typeof l?i(Function.call,l):l,y&&((x.virtual||(x.virtual={}))[a]=l,t&c.R&&m&&!m[a]&&u(m,a,l)))};c.F=1,c.G=2,c.S=4,c.P=8,c.B=16,c.W=32,c.U=64,c.R=128,t.exports=c},function(t,n){var e={}.toString;t.exports=function(t){return e.call(t).slice(8,-1)}},function(t,n,e){var r=e(11),o=e(1).document,i=r(o)&&r(o.createElement);t.exports=function(t){return i?o.createElement(t):{}}},function(t,n,e){t.exports=!e(4)&&!e(8)(function(){return 7!=Object.defineProperty(e(29)("div"),"a",{get:function(){return 7}}).a})},function(t,n,e){"use strict";var r=e(18),o=e(27),i=e(36),u=e(5),f=e(2),c=e(17),a=e(51),s=e(20),l=e(58),p=e(7)("iterator"),d=!([].keys&&"next"in[].keys()),v="@@iterator",y="keys",h="values",b=function(){return this};t.exports=function(t,n,e,x,m,g,w){a(e,n,x);var O,S,_,j=function(t){if(!d&&t in A)return A[t];switch(t){case y:return function(){return new e(this,t)};case h:return function(){return new e(this,t)}}return function(){return new e(this,t)}},P=n+" Iterator",E=m==h,M=!1,A=t.prototype,T=A[p]||A[v]||m&&A[m],L=T||j(m),N=m?E?j("entries"):L:void 0,C="Array"==n?A.entries||T:T;if(C&&(_=l(C.call(new t)),_!==Object.prototype&&(s(_,P,!0),r||f(_,p)||u(_,p,b))),E&&T&&T.name!==h&&(M=!0,L=function(){return T.call(this)}),r&&!w||!d&&!M&&A[p]||u(A,p,L),c[n]=L,c[P]=b,m)if(O={values:E?L:j(h),keys:g?L:j(y),entries:N},w)for(S in O)S in A||i(A,S,O[S]);else o(o.P+o.F*(d||M),n,O);return O}},function(t,n,e){var r=e(10),o=e(55),i=e(16),u=e(21)("IE_PROTO"),f=function(){},c="prototype",a=function(){var t,n=e(29)("iframe"),r=i.length,o="<",u=">";for(n.style.display="none",e(48).appendChild(n),n.src="javascript:",t=n.contentWindow.document,t.open(),t.write(o+"script"+u+"document.F=Object"+o+"/script"+u),t.close(),a=t.F;r--;)delete a[c][i[r]];return a()};t.exports=Object.create||function(t,n){var e;return null!==t?(f[c]=r(t),e=new f,f[c]=null,e[u]=t):e=a(),void 0===n?e:o(e,n)}},function(t,n,e){var r=e(35),o=e(16).concat("length","prototype");n.f=Object.getOwnPropertyNames||function(t){return r(t,o)}},function(t,n){n.f=Object.getOwnPropertySymbols},function(t,n,e){var r=e(2),o=e(3),i=e(45)(!1),u=e(21)("IE_PROTO");t.exports=function(t,n){var e,f=o(t),c=0,a=[];for(e in f)e!=u&&r(f,e)&&a.push(e);for(;n.length>c;)r(f,e=n[c++])&&(~i(a,e)||a.push(e));return a}},function(t,n,e){t.exports=e(5)},function(t,n,e){var r=e(15);t.exports=function(t){return Object(r(t))}},function(t,n,e){t.exports={default:e(41),__esModule:!0}},function(t,n,e){t.exports={default:e(42),__esModule:!0}},function(t,n,e){"use strict";function r(t){return t&&t.__esModule?t:{default:t}}n.__esModule=!0;var o=e(39),i=r(o),u=e(38),f=r(u),c="function"==typeof f.default&&"symbol"==typeof i.default?function(t){return typeof t}:function(t){return t&&"function"==typeof f.default&&t.constructor===f.default&&t!==f.default.prototype?"symbol":typeof t};n.default="function"==typeof f.default&&"symbol"===c(i.default)?function(t){return"undefined"==typeof t?"undefined":c(t)}:function(t){return t&&"function"==typeof f.default&&t.constructor===f.default&&t!==f.default.prototype?"symbol":"undefined"==typeof t?"undefined":c(t)}},function(t,n,e){e(65),e(63),e(66),e(67),t.exports=e(14).Symbol},function(t,n,e){e(64),e(68),t.exports=e(26).f("iterator")},function(t,n){t.exports=function(t){if("function"!=typeof t)throw TypeError(t+" is not a function!");return t}},function(t,n){t.exports=function(){}},function(t,n,e){var r=e(3),o=e(61),i=e(60);t.exports=function(t){return function(n,e,u){var f,c=r(n),a=o(c.length),s=i(u,a);if(t&&e!=e){for(;a>s;)if(f=c[s++],f!=f)return!0}else for(;a>s;s++)if((t||s in c)&&c[s]===e)return t||s||0;return!t&&-1}}},function(t,n,e){var r=e(43);t.exports=function(t,n,e){if(r(t),void 0===n)return t;switch(e){case 1:return function(e){return t.call(n,e)};case 2:return function(e,r){return t.call(n,e,r)};case 3:return function(e,r,o){return t.call(n,e,r,o)}}return function(){return t.apply(n,arguments)}}},function(t,n,e){var r=e(9),o=e(34),i=e(19);t.exports=function(t){var n=r(t),e=o.f;if(e)for(var u,f=e(t),c=i.f,a=0;f.length>a;)c.call(t,u=f[a++])&&n.push(u);return n}},function(t,n,e){t.exports=e(1).document&&document.documentElement},function(t,n,e){var r=e(28);t.exports=Object("z").propertyIsEnumerable(0)?Object:function(t){return"String"==r(t)?t.split(""):Object(t)}},function(t,n,e){var r=e(28);t.exports=Array.isArray||function(t){return"Array"==r(t)}},function(t,n,e){"use strict";var r=e(32),o=e(12),i=e(20),u={};e(5)(u,e(7)("iterator"),function(){return this}),t.exports=function(t,n,e){t.prototype=r(u,{next:o(1,e)}),i(t,n+" Iterator")}},function(t,n){t.exports=function(t,n){return{value:n,done:!!t}}},function(t,n,e){var r=e(9),o=e(3);t.exports=function(t,n){for(var e,i=o(t),u=r(i),f=u.length,c=0;f>c;)if(i[e=u[c++]]===n)return e}},function(t,n,e){var r=e(13)("meta"),o=e(11),i=e(2),u=e(6).f,f=0,c=Object.isExtensible||function(){return!0},a=!e(8)(function(){return c(Object.preventExtensions({}))}),s=function(t){u(t,r,{value:{i:"O"+ ++f,w:{}}})},l=function(t,n){if(!o(t))return"symbol"==typeof t?t:("string"==typeof t?"S":"P")+t;if(!i(t,r)){if(!c(t))return"F";if(!n)return"E";s(t)}return t[r].i},p=function(t,n){if(!i(t,r)){if(!c(t))return!0;if(!n)return!1;s(t)}return t[r].w},d=function(t){return a&&v.NEED&&c(t)&&!i(t,r)&&s(t),t},v=t.exports={KEY:r,NEED:!1,fastKey:l,getWeak:p,onFreeze:d}},function(t,n,e){var r=e(6),o=e(10),i=e(9);t.exports=e(4)?Object.defineProperties:function(t,n){o(t);for(var e,u=i(n),f=u.length,c=0;f>c;)r.f(t,e=u[c++],n[e]);return t}},function(t,n,e){var r=e(19),o=e(12),i=e(3),u=e(24),f=e(2),c=e(30),a=Object.getOwnPropertyDescriptor;n.f=e(4)?a:function(t,n){if(t=i(t),n=u(n,!0),c)try{return a(t,n)}catch(t){}if(f(t,n))return o(!r.f.call(t,n),t[n])}},function(t,n,e){var r=e(3),o=e(33).f,i={}.toString,u="object"==typeof window&&window&&Object.getOwnPropertyNames?Object.getOwnPropertyNames(window):[],f=function(t){try{return o(t)}catch(t){return u.slice()}};t.exports.f=function(t){return u&&"[object Window]"==i.call(t)?f(t):o(r(t))}},function(t,n,e){var r=e(2),o=e(37),i=e(21)("IE_PROTO"),u=Object.prototype;t.exports=Object.getPrototypeOf||function(t){return t=o(t),r(t,i)?t[i]:"function"==typeof t.constructor&&t instanceof t.constructor?t.constructor.prototype:t instanceof Object?u:null}},function(t,n,e){var r=e(23),o=e(15);t.exports=function(t){return function(n,e){var i,u,f=String(o(n)),c=r(e),a=f.length;return c<0||c>=a?t?"":void 0:(i=f.charCodeAt(c),i<55296||i>56319||c+1===a||(u=f.charCodeAt(c+1))<56320||u>57343?t?f.charAt(c):i:t?f.slice(c,c+2):(i-55296<<10)+(u-56320)+65536)}}},function(t,n,e){var r=e(23),o=Math.max,i=Math.min;t.exports=function(t,n){return t=r(t),t<0?o(t+n,0):i(t,n)}},function(t,n,e){var r=e(23),o=Math.min;t.exports=function(t){return t>0?o(r(t),9007199254740991):0}},function(t,n,e){"use strict";var r=e(44),o=e(52),i=e(17),u=e(3);t.exports=e(31)(Array,"Array",function(t,n){this._t=u(t),this._i=0,this._k=n},function(){var t=this._t,n=this._k,e=this._i++;return!t||e>=t.length?(this._t=void 0,o(1)):"keys"==n?o(0,e):"values"==n?o(0,t[e]):o(0,[e,t[e]])},"values"),i.Arguments=i.Array,r("keys"),r("values"),r("entries")},function(t,n){},function(t,n,e){"use strict";var r=e(59)(!0);e(31)(String,"String",function(t){this._t=String(t),this._i=0},function(){var t,n=this._t,e=this._i;return e>=n.length?{value:void 0,done:!0}:(t=r(n,e),this._i+=t.length,{value:t,done:!1})})},function(t,n,e){"use strict";var r=e(1),o=e(2),i=e(4),u=e(27),f=e(36),c=e(54).KEY,a=e(8),s=e(22),l=e(20),p=e(13),d=e(7),v=e(26),y=e(25),h=e(53),b=e(47),x=e(50),m=e(10),g=e(3),w=e(24),O=e(12),S=e(32),_=e(57),j=e(56),P=e(6),E=e(9),M=j.f,A=P.f,T=_.f,L=r.Symbol,N=r.JSON,C=N&&N.stringify,k="prototype",F=d("_hidden"),q=d("toPrimitive"),I={}.propertyIsEnumerable,B=s("symbol-registry"),D=s("symbols"),W=s("op-symbols"),H=Object[k],K="function"==typeof L,R=r.QObject,J=!R||!R[k]||!R[k].findChild,U=i&&a(function(){return 7!=S(A({},"a",{get:function(){return A(this,"a",{value:7}).a}})).a})?function(t,n,e){var r=M(H,n);r&&delete H[n],A(t,n,e),r&&t!==H&&A(H,n,r)}:A,G=function(t){var n=D[t]=S(L[k]);return n._k=t,n},$=K&&"symbol"==typeof L.iterator?function(t){return"symbol"==typeof t}:function(t){return t instanceof L},z=function(t,n,e){return t===H&&z(W,n,e),m(t),n=w(n,!0),m(e),o(D,n)?(e.enumerable?(o(t,F)&&t[F][n]&&(t[F][n]=!1),e=S(e,{enumerable:O(0,!1)})):(o(t,F)||A(t,F,O(1,{})),t[F][n]=!0),U(t,n,e)):A(t,n,e)},Y=function(t,n){m(t);for(var e,r=b(n=g(n)),o=0,i=r.length;i>o;)z(t,e=r[o++],n[e]);return t},Q=function(t,n){return void 0===n?S(t):Y(S(t),n)},X=function(t){var n=I.call(this,t=w(t,!0));return!(this===H&&o(D,t)&&!o(W,t))&&(!(n||!o(this,t)||!o(D,t)||o(this,F)&&this[F][t])||n)},V=function(t,n){if(t=g(t),n=w(n,!0),t!==H||!o(D,n)||o(W,n)){var e=M(t,n);return!e||!o(D,n)||o(t,F)&&t[F][n]||(e.enumerable=!0),e}},Z=function(t){for(var n,e=T(g(t)),r=[],i=0;e.length>i;)o(D,n=e[i++])||n==F||n==c||r.push(n);return r},tt=function(t){for(var n,e=t===H,r=T(e?W:g(t)),i=[],u=0;r.length>u;)!o(D,n=r[u++])||e&&!o(H,n)||i.push(D[n]);return i};K||(L=function(){if(this instanceof L)throw TypeError("Symbol is not a constructor!");var t=p(arguments.length>0?arguments[0]:void 0),n=function(e){this===H&&n.call(W,e),o(this,F)&&o(this[F],t)&&(this[F][t]=!1),U(this,t,O(1,e))};return i&&J&&U(H,t,{configurable:!0,set:n}),G(t)},f(L[k],"toString",function(){return this._k}),j.f=V,P.f=z,e(33).f=_.f=Z,e(19).f=X,e(34).f=tt,i&&!e(18)&&f(H,"propertyIsEnumerable",X,!0),v.f=function(t){return G(d(t))}),u(u.G+u.W+u.F*!K,{Symbol:L});for(var nt="hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables".split(","),et=0;nt.length>et;)d(nt[et++]);for(var nt=E(d.store),et=0;nt.length>et;)y(nt[et++]);u(u.S+u.F*!K,"Symbol",{for:function(t){return o(B,t+="")?B[t]:B[t]=L(t)},keyFor:function(t){if($(t))return h(B,t);throw TypeError(t+" is not a symbol!")},useSetter:function(){J=!0},useSimple:function(){J=!1}}),u(u.S+u.F*!K,"Object",{create:Q,defineProperty:z,defineProperties:Y,getOwnPropertyDescriptor:V,getOwnPropertyNames:Z,getOwnPropertySymbols:tt}),N&&u(u.S+u.F*(!K||a(function(){var t=L();return"[null]"!=C([t])||"{}"!=C({a:t})||"{}"!=C(Object(t))})),"JSON",{stringify:function(t){if(void 0!==t&&!$(t)){for(var n,e,r=[t],o=1;arguments.length>o;)r.push(arguments[o++]);return n=r[1],"function"==typeof n&&(e=n),!e&&x(n)||(n=function(t,n){if(e&&(n=e.call(this,t,n)),!$(n))return n}),r[1]=n,C.apply(N,r)}}}),L[k][q]||e(5)(L[k],q,L[k].valueOf),l(L,"Symbol"),l(Math,"Math",!0),l(r.JSON,"JSON",!0)},function(t,n,e){e(25)("asyncIterator")},function(t,n,e){e(25)("observable")},function(t,n,e){e(62);for(var r=e(1),o=e(5),i=e(17),u=e(7)("toStringTag"),f=["NodeList","DOMTokenList","MediaList","StyleSheetList","CSSRuleList"],c=0;c<5;c++){var a=f[c],s=r[a],l=s&&s.prototype;l&&!l[u]&&o(l,u,a),i[a]=i.Array}},function(t,n){"use strict";var e={versions:function(){var t=window.navigator.userAgent;return{trident:t.indexOf("Trident")>-1,presto:t.indexOf("Presto")>-1,webKit:t.indexOf("AppleWebKit")>-1,gecko:t.indexOf("Gecko")>-1&&t.indexOf("KHTML")==-1,mobile:!!t.match(/AppleWebKit.*Mobile.*/),ios:!!t.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),android:t.indexOf("Android")>-1||t.indexOf("Linux")>-1,iPhone:t.indexOf("iPhone")>-1||t.indexOf("Mac")>-1,iPad:t.indexOf("iPad")>-1,webApp:t.indexOf("Safari")==-1,weixin:t.indexOf("MicroMessenger")==-1}}()};t.exports=e},function(t,n,e){"use strict";function r(t){return t&&t.__esModule?t:{default:t}}var o=e(40),i=r(o),u=function(){function t(t,n,e){return n||e?String.fromCharCode(n||e):o[t]||t}function n(t){return l[t]}var e=/&quot;|&lt;|&gt;|&amp;|&nbsp;|&apos;|&#(\d+);|&#(\d+)/g,r=/['<> "&]/g,o={"&quot;":'"',"&lt;":"<","&gt;":">","&amp;":"&","&nbsp;":" "},f=/\u00a0/g,c=/<br\s*\/?>/gi,a=/\r?\n/g,s=/\s/g,l={};for(var p in o)l[o[p]]=p;return o["&apos;"]="'",l["'"]="&#39;",{encode:function(t){return t?(""+t).replace(r,n).replace(a,"<br/>").replace(s,"&nbsp;"):""},decode:function(n){return n?(""+n).replace(c,"\n").replace(e,t).replace(f," "):""},encodeBase16:function(t){if(!t)return t;t+="";for(var n=[],e=0,r=t.length;r>e;e++)n.push(t.charCodeAt(e).toString(16).toUpperCase());return n.join("")},encodeBase16forJSON:function(t){if(!t)return t;t=t.replace(/[\u4E00-\u9FBF]/gi,function(t){return escape(t).replace("%u","\\u")});for(var n=[],e=0,r=t.length;r>e;e++)n.push(t.charCodeAt(e).toString(16).toUpperCase());return n.join("")},decodeBase16:function(t){if(!t)return t;t+="";for(var n=[],e=0,r=t.length;r>e;e+=2)n.push(String.fromCharCode("0x"+t.slice(e,e+2)));return n.join("")},encodeObject:function(t){if(t instanceof Array)for(var n=0,e=t.length;e>n;n++)t[n]=u.encodeObject(t[n]);else if("object"==("undefined"==typeof t?"undefined":(0,i.default)(t)))for(var r in t)t[r]=u.encodeObject(t[r]);else if("string"==typeof t)return u.encode(t);return t},loadScript:function(t){var n=document.createElement("script");document.getElementsByTagName("body")[0].appendChild(n),n.setAttribute("src",t)},addLoadEvent:function(t){var n=window.onload;"function"!=typeof window.onload?window.onload=t:window.onload=function(){n(),t()}}}}();t.exports=u},function(t,n){function e(t,n){t.classList?t.classList.add(n):t.className+=" "+n}t.exports=e},function(t,n){function e(t,n){if(t.classList)t.classList.remove(n);else{var e=new RegExp("(^|\\b)"+n.split(" ").join("|")+"(\\b|$)","gi");t.className=t.className.replace(e," ")}}t.exports=e},,,function(t,n){"use strict";function e(){var t=document.querySelector("#page-nav");if(t&&!document.querySelector("#page-nav .extend.prev")&&(t.innerHTML='<a class="extend prev disabled" rel="prev">&laquo; Prev</a>'+t.innerHTML),t&&!document.querySelector("#page-nav .extend.next")&&(t.innerHTML=t.innerHTML+'<a class="extend next disabled" rel="next">Next &raquo;</a>'),yiliaConfig&&yiliaConfig.open_in_new){var n=document.querySelectorAll(".article-entry a:not(.article-more-a)");n.forEach(function(t){t.setAttribute("target","_blank")})}var e=document.querySelector("#js-aboutme");e&&0!==e.length&&(e.innerHTML=e.innerText)}t.exports={init:e}},,,,,,,,,function(t,n){function e(t,n){if("string"==typeof n)return t.insertAdjacentHTML("afterend",n);var e=t.nextSibling;return e?t.parentNode.insertBefore(n,e):t.parentNode.appendChild(n)}t.exports=e}])</script><script src="/./main.2d7529.js"></script><script>!function(){var e=function(e){var t=document.createElement("script");document.getElementsByTagName("body")[0].appendChild(t),t.setAttribute("src",e)};e("/slider.885efe.js")}()</script>
+
+
+    
+<div class="tools-col" q-class="show:isShow,hide:isShow|isFalse" q-on="click:stop(e)">
+  <div class="tools-nav header-menu">
+    
+    
+      
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+    
+
+    <ul style="width: 70%">
+    
+    
+      
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      
+        
+      
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
+      
+        
+      
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      
+        
+    </ul>
+  </div>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all" q-show="innerArchive">
+        <div class="search-wrap">
+          <input class="search-ipt" q-model="search" type="text" placeholder="find something…">
+          <i class="icon-search icon" q-show="search|isEmptyStr"></i>
+          <i class="icon-close icon" q-show="search|isNotEmptyStr" q-on="click:clearChose(e)"></i>
+        </div>
+        <div class="widget tagcloud search-tag">
+          <p class="search-tag-wording">tag:</p>
+          <label class="search-switch">
+            <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
+          </label>
+          <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">技术</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">idea</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">社交</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">产品分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">产品之道</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">职业看法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">吐槽</a>
+              </li>
+            
+            <div class="clearfix"></div>
+          </ul>
+        </div>
+        <ul class="search-ul">
+          <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
+            缺失模块。<br/>1、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            2、在根目录_config.yml里添加配置：
+<pre style="font-size: 12px;" q-show="jsonFail">
+  jsonContent:
+    meta: false
+    pages: false
+    posts:
+      title: true
+      date: true
+      path: true
+      text: true
+      raw: false
+      content: false
+      slug: false
+      updated: false
+      comments: false
+      link: false
+      permalink: false
+      excerpt: false
+      categories: false
+      tags: true
+</pre>
+          </p>
+          <li class="search-li" q-repeat="items" q-show="isShow">
+            <a q-attr="href:path|urlformat" class="search-title"><i class="icon-quo-left icon"></i><span q-text="title"></span></a>
+            <p class="search-time">
+              <i class="icon-calendar icon"></i>
+              <span q-text="date|dateformat"></span>
+            </p>
+            <p class="search-tag">
+              <i class="icon-price-tags icon"></i>
+              <span q-repeat="tags" q-on="click:choseTag(e, name)" q-text="name|tagformat"></span>
+            </p>
+          </li>
+        </ul>
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-friends" q-show="friends">
+  		
+        <ul class="search-ul">
+          
+            <li class="search-li">
+              <a href="http://mindhacks.cn/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>刘未鹏-暗时间作者</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://pmdaniu.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>产品大牛</a>
+            </li>
+          
+        </ul>
+  		
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-me" q-show="aboutme">
+  	  	
+  	  		<div class="aboutme-wrap" id="js-aboutme">来自于江西抚州&lt;br /&gt;毕业于华东交通大学&lt;br /&gt;一个爱幻想的程序员&lt;br /&gt;喜欢放空自己，行走各地。</div>
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+</body>
+</html>
